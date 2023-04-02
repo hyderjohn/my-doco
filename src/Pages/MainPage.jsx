@@ -7,7 +7,7 @@ const MainPage = () => {
   return (
     <div>
         <Header/>
-        <Divider/>
+        <Divider />
         <Cart/>
         <Footer/>
     </div>
