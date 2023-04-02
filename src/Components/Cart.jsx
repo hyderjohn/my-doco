@@ -16,11 +16,11 @@ const Cart = () => {
 <div>
     <Row>
         <Col span={8} style={{display: "flex", alignItems: "center"}}> <img src={pizza} alt="" style={{width: "100px", height:"100px"}}/></Col>
-        <Col span={16} style={{display:"flex", flexDirection:"column"}}>
+        <Col span={16} style={{textAlign: "left"}}>
             <h3>Product Name</h3>
-            <p>2100</p>
+            <p>2100 ~ 900</p>
             <p>MRP - 3500</p>
-        <div style={{display:"inline-flex", alignItems:'center', gap:"15px", background:"#7375FA", border:"0px", borderRadius:"5px"}}>
+        <div style={{display:"inline-flex", alignItems:'center', gap:"15px", background:"#7375FA", border:"0px", borderRadius:"5px", marginLeft: "10px"}}>
             <Button  style={{border:"none", margin:"5px", border:"none"}}><MinusCircleOutlined /></Button>
             <h3>1</h3>
             <Button  style={{border:"none", margin:"5px"}}><PlusCircleOutlined /></Button>
