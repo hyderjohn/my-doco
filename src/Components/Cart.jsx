@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   ShoppingCartOutlined,
@@ -15,17 +15,28 @@ const { Text } = Typography;
 const Cart = () => {
   const navigate = useNavigate();
   const [data, setData] = useState(items);
+  const [total, setTotal] = useState();
 
-  console.log(data);
   const handleSuccess = () => {
     navigate("/success", { replace: true });
   };
 
   const handleDelete = (id) => {
-    console.log(id);
     const newData = data.filter((item) => item.id !== id);
     setData(newData);
   };
+
+  useEffect(() => {
+    let sum = 0
+    const totalPrice = data.map((item)=> {
+      return item.disc_price 
+    })
+    totalPrice.forEach(item => {
+      sum += item;
+  });
+    setTotal(sum);
+  },[data])
+  
 
   return (
     <div>
@@ -127,7 +138,7 @@ const Cart = () => {
 
       <Divider />
       <div style={{ marginBottom: "10px" }}>
-        <p>Total Amount 2345</p>
+        <p>Total Amount {total}</p>
         {
           <Button
             type="primary"
