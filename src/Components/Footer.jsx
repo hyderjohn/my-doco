@@ -13,6 +13,8 @@ const Footer = () => {
         display: "flex",
         justifyContent: "space-between",
         marginBottom: "5px",
+        // position:"fixed",
+        // bottom:"0px"
         // padding:"10px"
       }}
     >

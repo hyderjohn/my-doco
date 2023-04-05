@@ -1,4 +1,4 @@
-const data = [{
+ export const data = [{
     name: "Distributor 1",
     price :2100,
     disc_price: 991,
