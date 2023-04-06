@@ -9,6 +9,7 @@ import {
 } from "@ant-design/icons";
 import { Button, Divider, Row, Col, Typography, Popconfirm } from "antd";
 import pizza from "../assets/pizza.png";
+import "./Style.css";
 
 const { Text } = Typography;
 
@@ -27,16 +28,15 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    let sum = 0
-    const totalPrice = data.map((item)=> {
-      return item.disc_price 
-    })
-    totalPrice.forEach(item => {
+    let sum = 0;
+    const totalPrice = data.map((item) => {
+      return item.disc_price;
+    });
+    totalPrice.forEach((item) => {
       sum += item;
-  });
+    });
     setTotal(sum);
-  },[data])
-  
+  }, [data]);
 
   return (
     <div>
@@ -44,13 +44,8 @@ const Cart = () => {
         <h3 style={{ display: "flex", alignItems: "center", margin: "10px" }}>
           <ShoppingCartOutlined style={{ color: "#33D4FF" }} /> Cart
         </h3>
-        <Text style={{ display: "flex", alignItems: "left", color: "#3336FF" }}>
-          2 Items
-        </Text>
-        <Text
-          style={{ display: "flex", alignItems: "center" }}
-          type="secondary"
-        >
+        <Text className="app-text">2 Items</Text>
+        <Text className="app-text" type="secondary">
           <EnvironmentOutlined /> Deliver to ABC, Delhi, 123456
         </Text>
       </div>
@@ -60,7 +55,7 @@ const Cart = () => {
           return (
             <div key={item.id}>
               <Row>
-                <Col span={24} style={{ display: "flex", alignItems: "left" }}>
+                <Col span={24} className="app-col">
                   <h3>Distributor Name - Order {item.id}</h3>
                   <br />
                 </Col>
@@ -71,11 +66,7 @@ const Cart = () => {
                   md={8}
                   style={{ display: "flex", alignItems: "center" }}
                 >
-                  <img
-                    src={pizza}
-                    alt=""
-                    style={{ width: "100px", height: "100px" }}
-                  />
+                  <img className="image" src={pizza} alt="" />
                 </Col>
                 <Col xs={12} md={16} style={{ textAlign: "left" }}>
                   <h3>Product Name</h3>
@@ -90,39 +81,22 @@ const Cart = () => {
                   <br />
                   <Text type="secondary">MRP - {item.mrp}</Text>
                   <br />
-                  <div
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "15px",
-                      background: "#7375FA",
-                      border: "0px",
-                      borderRadius: "5px",
-                      margin: "10px",
-                    }}
-                  >
-                    <Button style={{ border: "none", margin: "5px" }}>
+                  <div className="app-div">
+                    <Button size="small" className="button">
                       <MinusCircleOutlined />
                     </Button>
                     <h3>13</h3>
-                    <Button style={{ border: "none", margin: "5px" }}>
+                    <Button size="small" className="button">
                       <PlusCircleOutlined />
                     </Button>
                   </div>
                 </Col>
               </Row>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "right",
-                  paddingRight: "10px",
-                }}
-              >
+              <div className="del-btn">
                 <Popconfirm
                   placement="topLeft"
                   title="Delete Item"
-                  onConfirm={()=>handleDelete(item.id)}
-                  // onCancel={cancel}
+                  onConfirm={() => handleDelete(item.id)}
                   okText="Yes"
                   cancelText="No"
                 >
@@ -136,8 +110,16 @@ const Cart = () => {
         })}
       </div>
 
-      <Divider />
+      <Divider style={{margin:"10px 0px"}} />
       <div style={{ marginBottom: "10px" }}>
+        <Row style={{margin:"10px"}}>
+          <Col span={12} style={{display:"flex", textAlign:"left"}}>
+            <p>Total Amount</p>
+          </Col>
+          <Col span={12} style={{textAlign:"right"}}>
+            <p>{total}</p>
+          </Col>
+        </Row>
         <p>Total Amount {total}</p>
         {
           <Button
@@ -161,14 +143,14 @@ export const items = [
     id: 1,
     name: "Distributor 1",
     price: 2100,
-    disc_price: 991,
+    disc_price: 991.5,
     mrp: 3400,
   },
   {
     id: 2,
     name: "Distributor 2",
     price: 2100,
-    disc_price: 991,
+    disc_price: 991.5,
     mrp: 3500,
   },
 ];

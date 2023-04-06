@@ -1,0 +1,46 @@
+.header-app {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-app {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.app-text {
+  display: flex;
+  align-items: center;
+  color: #3336ff;
+  margin-left: 10px;
+}
+.app-col{
+    display: flex;
+    align-items: left;
+}
+.image{
+    width: 100px;
+    height: 100px;
+}
+.app-div{
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: #7375FA;
+    border: 0px;
+    border-radius: 5px;
+}
+.button{
+    border: none;
+    margin: 5px;
+    background-color: transparent;
+}
+.del-btn{
+    display: flex;
+    justify-content: right;
+    padding-right: 10px;
+}

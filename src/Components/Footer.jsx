@@ -5,18 +5,12 @@ import {
   FileTextOutlined,
   ContactsOutlined,
 } from "@ant-design/icons";
+import "./Style.css"
 
 const Footer = () => {
   return (
     <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        marginBottom: "5px",
-        // position:"fixed",
-        // bottom:"0px"
-        // padding:"10px"
-      }}
+    className="footer-app"
     >
       <HomeOutlined style={{ fontSize: "20px" }} />
       <ContactsOutlined style={{ fontSize: "20px" }} />
